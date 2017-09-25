@@ -1,6 +1,11 @@
 # TMDbApp
 A simple Android app that provides easy access to a list of upcoming movies. The app also allow you to search for your favorite movies.
 
+<img width="270" src="./screenshots/movie_list.png" /> <img width="270" src="./screenshots/movie_detail.png" /> 
+<img width="270" src="./screenshots/movie_search.png" />
+
+
+
 ## Requisites
 * Java 8
 * SDK Version 26
