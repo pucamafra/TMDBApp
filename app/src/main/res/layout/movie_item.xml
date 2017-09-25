@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/movie_item_height"
+    android:clickable="true">
+
+    <com.lid.lib.LabelImageView
+        android:id="@+id/poster"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/moonlight"
+        app:label_backgroundColor="@color/old_pink"
+        app:label_distance="@dimen/label_distance"
+        app:label_height="@dimen/label_height"
+        app:label_orientation="LEFT_TOP"
+        app:label_text="Release Date"
+        app:label_textSize="@dimen/label_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@color/black_overlay"
+        android:orientation="vertical"
+        android:paddingEnd="@dimen/overlay_padding"
+        android:paddingLeft="@dimen/overlay_padding"
+        android:paddingRight="@dimen/overlay_padding"
+        android:paddingStart="@dimen/overlay_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textAppearance="@style/textAppearanceListItemTitle"
+            android:textColor="@android:color/white"
+            tools:text="Wonder woman" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/genres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textAppearance="@style/textAppearanceListItemSmall"
+            android:textColor="@color/grey"
+            tools:text="Adventure, Action" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:collapsedTitleTextAppearance="@style/collapsedTextAppearance"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginBottom="@dimen/collapsing_toolbar_margin_bottom"
+            app:expandedTitleMarginStart="@dimen/expandedTitleMarginStart"
+            app:expandedTitleTextAppearance="@style/expandedTextAppearance"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/poster"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/collapsing_image_height"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/moonlight"
+                    app:layout_collapseMode="parallax" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/collapsing_header_height"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/black_overlay" />
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_collapseMode="pin" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/overlay_container_padding"
+            android:paddingLeft="@dimen/overlay_container_padding"
+            android:paddingRight="@dimen/overlay_container_padding"
+            android:paddingStart="@dimen/overlay_container_padding">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/genres_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/overlay_container_item_margin"
+                android:text="@string/genre"
+                android:textAppearance="@style/textAppearanceListItemMedium"
+                android:textColor="@android:color/white" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/genres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/textAppearanceListItemMedium"
+                android:textColor="@color/grey"
+                tools:text="Action, Fantasy, Romance" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/release_date_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/overlay_container_item_margin"
+                android:text="@string/release_date"
+                android:textAppearance="@style/textAppearanceListItemMedium"
+                android:textColor="@android:color/white" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/release_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/textAppearanceListItemMedium"
+                android:textColor="@color/grey"
+                tools:text="11/25/2017" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/overview_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/overlay_container_item_margin"
+                android:text="@string/overview"
+                android:textAppearance="@style/textAppearanceListItemMedium"
+                android:textColor="@android:color/white" />
+
+            <com.uncopt.android.widget.text.justify.JustifiedTextView
+                android:id="@+id/overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/textAppearanceListItemMedium"
+                android:textColor="@color/grey"
+                tools:text="Lorem ipsum dolor sit amet, vel aperiri facilis ea, at ignota consulatu pri. Id singulis corrumpit sea, eam posse sanctus no. Iudico platonem qui te. Mel atqui congue alterum in. Cum accusata gloriatur ea, sea iuvaret oporteat adipisci in." />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
