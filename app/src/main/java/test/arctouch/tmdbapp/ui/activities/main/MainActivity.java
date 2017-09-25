@@ -5,6 +5,9 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -21,7 +24,6 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import cn.iwgang.familiarrecyclerview.FamiliarRefreshRecyclerView;
 import eu.davidea.flexibleadapter.FlexibleAdapter;
 import eu.davidea.flexibleadapter.items.AbstractFlexibleItem;
 import test.arctouch.tmdbapp.R;
@@ -48,8 +50,8 @@ public class MainActivity extends AppCompatActivity implements MainPresenterView
     @BindView(R.id.progress_bar)
     ProgressBar progressBar;
 
-    @BindView(R.id.movieList)
-    FamiliarRefreshRecyclerView movieList;
+    @BindView(R.id.movie_list)
+    RecyclerView movieList;
 
     private FlexibleAdapter<AbstractFlexibleItem> adapter;
 
@@ -68,7 +70,10 @@ public class MainActivity extends AppCompatActivity implements MainPresenterView
         setSupportActionBar(this.toolbar);
         this.adapter = new FlexibleAdapter<>(new ArrayList<AbstractFlexibleItem>());
         this.movieList.setAdapter(this.adapter);
-        this.movieList.setPullRefreshEnabled(false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        this.movieList.setLayoutManager(layoutManager);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, layoutManager.getOrientation());
+        this.movieList.addItemDecoration(dividerItemDecoration);
     }
 
     @Override
@@ -131,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements MainPresenterView
     public void onLoadMoreFail(Throwable e) {
         Log.d(TAG, "onLoadMoreFail:" + e.getMessage());
         Toast.makeText(this, R.string.load_movies_error, Toast.LENGTH_SHORT).show();
-        this.movieList.loadMoreComplete();
+        this.adapter.onLoadMoreComplete(new ArrayList<>());
     }
 
     @Override

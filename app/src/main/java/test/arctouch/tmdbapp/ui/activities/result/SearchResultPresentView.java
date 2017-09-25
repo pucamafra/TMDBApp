@@ -12,6 +12,8 @@ interface SearchResultPresentView extends IPresenterView {
 
     void dismissLoading();
 
+    void noSearchResult();
+
     void onSearchResultsSuccess(List<Movie> movieList);
 
     void onLoadMoreSuccess(List<Movie> movieList);

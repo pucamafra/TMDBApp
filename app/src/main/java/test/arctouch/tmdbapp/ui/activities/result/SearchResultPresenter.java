@@ -57,6 +57,12 @@ class SearchResultPresenter extends BasePresenter<SearchResultPresentView> {
             view.enablePagination();
         }
 
+        if (movieList.isEmpty()) {
+            view.noSearchResult();
+            view.dismissLoading();
+            return;
+        }
+
         view.onSearchResultsSuccess(movieList);
         view.dismissLoading();
     }

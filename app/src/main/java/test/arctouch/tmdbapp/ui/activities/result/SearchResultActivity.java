@@ -4,6 +4,9 @@ import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
@@ -18,7 +21,6 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import cn.iwgang.familiarrecyclerview.FamiliarRefreshRecyclerView;
 import eu.davidea.flexibleadapter.FlexibleAdapter;
 import eu.davidea.flexibleadapter.items.AbstractFlexibleItem;
 import test.arctouch.tmdbapp.R;
@@ -46,8 +48,8 @@ public class SearchResultActivity extends AppCompatActivity implements SearchRes
 
     SearchResultPresenter presenter;
 
-    @BindView(R.id.movieList)
-    FamiliarRefreshRecyclerView movieList;
+    @BindView(R.id.movie_list)
+    RecyclerView movieList;
 
     private FlexibleAdapter<AbstractFlexibleItem> adapter;
 
@@ -81,8 +83,10 @@ public class SearchResultActivity extends AppCompatActivity implements SearchRes
         }
         this.adapter = new FlexibleAdapter<>(new ArrayList<AbstractFlexibleItem>());
         this.movieList.setAdapter(this.adapter);
-        this.movieList.setPullRefreshEnabled(false);
-        this.movieList.getFamiliarRecyclerView().setEmptyView(View.inflate(this, R.layout.empty_view,null), true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        this.movieList.setLayoutManager(layoutManager);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, layoutManager.getOrientation());
+        this.movieList.addItemDecoration(dividerItemDecoration);
     }
 
     @Override
@@ -121,7 +125,7 @@ public class SearchResultActivity extends AppCompatActivity implements SearchRes
     public void onLoadMoreFail(Throwable t) {
         Log.d(TAG, "onLoadMoreFail:" + t.getMessage());
         Toast.makeText(this, R.string.load_movies_error, Toast.LENGTH_SHORT).show();
-        this.movieList.loadMoreComplete();
+        this.adapter.onLoadMoreComplete(new ArrayList<>());
     }
 
     @Override
@@ -153,6 +157,11 @@ public class SearchResultActivity extends AppCompatActivity implements SearchRes
     @Override
     public void dismissLoading() {
         this.progressBar.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void noSearchResult() {
+        ButterKnife.findById(this, R.id.tv_empty).setVisibility(View.VISIBLE);
     }
 
     @Override

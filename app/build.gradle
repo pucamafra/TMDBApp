@@ -41,7 +41,6 @@ ext {
     jsr250Version = '1.0'
     flexibleAdapterVersion = '5.0.0-rc2'
     picassoVersion = '2.5.2'
-    familiarRecycleViewVersion = '1.3.2'
     labelViewVersion = 'v1.1.2'
     justifiedVersion = '1.0'
 }
@@ -71,7 +70,6 @@ dependencies {
     provided "javax.annotation:jsr250-api:$jsr250Version"
 
     compile "eu.davidea:flexible-adapter:$flexibleAdapterVersion"
-    compile "com.github.iwgang:familiarrecyclerview:$familiarRecycleViewVersion"
     compile "com.github.linger1216:labelview:$labelViewVersion"
     compile "com.squareup.picasso:picasso:$picassoVersion"
     compile "com.uncopt:android.justified:$justifiedVersion"

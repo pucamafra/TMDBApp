@@ -16,15 +16,11 @@
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1" />
 
-    <cn.iwgang.familiarrecyclerview.FamiliarRefreshRecyclerView
-        android:id="@+id/movieList"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/movie_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/colorPrimary"
-        app:frv_divider="@color/colorPrimary"
-        app:frv_dividerHeight="1dp"
-        app:frv_layoutManager="linear"
-        app:frv_layoutManagerOrientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

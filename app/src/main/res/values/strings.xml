@@ -7,5 +7,5 @@
     <string name="load_movies_error">Something went wrong</string>
     <string name="search_hint">Enter a movie</string>
     <string name="no_genre">Genre not specified</string>
-    <string name="no_movie_found">Sorry there is no movie that matches your search</string>
+    <string name="no_movie_found">Sorry, there is no movie that matches your search</string>
 </resources>

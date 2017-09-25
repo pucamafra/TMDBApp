@@ -16,6 +16,7 @@
         android:theme="@style/Theme.TMDbApp">
         <activity
             android:name=".ui.activities.main.MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleInstance"
             android:theme="@style/Theme.TMDbApp">
             <intent-filter>
@@ -30,10 +31,13 @@
                 android:value=".ui.activities.result.ResultActivity" />
 
         </activity>
-        <activity android:name=".ui.activities.detail.MovieDetailActivity" />
+        <activity
+            android:name=".ui.activities.detail.MovieDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
 
         <activity
             android:name=".ui.activities.result.SearchResultActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:label="@string/search_results_activity"
             android:launchMode="singleTop">
 
