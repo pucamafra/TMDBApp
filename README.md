@@ -25,9 +25,6 @@ I chose Dagger to be my dependency injector because it generate the class in bui
 
 * Picasso
   I chose the picasso library to loading the movie image because it is one of the most used library to image loading and also because you do not need to config a lot of things before using it.
-
-* Familiar RecycleView
-   Allow to config layout manager, divider height and color straight from the xml, it also include pull to refresh, infinite loading, header, footer and etc.
    
 * Flexible Adapter
     This library offer a easy way to create recycleview items. You do not need create any adapter because it offer a flexible adapter where you can use to do different things such as drag and drop item, swipe left and right and other things with just one adapter. This library also include pull to refresh, infinite loading and more.
