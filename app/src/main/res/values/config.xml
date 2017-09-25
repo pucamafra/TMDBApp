@@ -1,0 +1,5 @@
+<resources>
+    <string name="api_key">1f54bd990f1cdfb230adb312546d765d</string>
+    <string name="api_base_url">https://api.themoviedb.org/3</string>
+    <string name="image_base_url">https://image.tmdb.org/t/p/w500/%1$s</string>
+</resources>

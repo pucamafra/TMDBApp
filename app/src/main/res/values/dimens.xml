@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Main -->
+    <dimen name="overlay_padding">10dp</dimen>
+    <dimen name="movie_item_height">230dp</dimen>
+    <dimen name="label_height">30dp</dimen>
+    <dimen name="label_distance">55dp</dimen>
+    <dimen name="label_text_size">15sp</dimen>
+
+    <!-- Detail -->
+    <dimen name="collapsing_header_height">48dp</dimen>
+    <dimen name="collapsing_toolbar_margin_bottom">16dp</dimen>
+    <dimen name="collapsing_image_height">300dp</dimen>
+    <dimen name="expandedTitleMarginStart">20dp</dimen>
+    <dimen name="overlay_container_padding">20dp</dimen>
+    <dimen name="overlay_container_item_margin">10dp</dimen>
+</resources>
